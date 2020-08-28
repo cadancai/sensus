@@ -300,12 +300,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Adaptation\AsplAggregation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Probes\ProbeState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Adaptation\SensingAgentStateDatum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\UserStatesPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserStates\UserState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\UserStatePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Probes\User\Scripts\ProbeTriggerProperties\" />
     <Folder Include="$(MSBuildThisFileDirectory)Callbacks\" />
     <Folder Include="$(MSBuildThisFileDirectory)Authentication\" />
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UserStates\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Adaptation\example-aspl-policy.json" />

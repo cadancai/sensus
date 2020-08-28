@@ -251,6 +251,22 @@ namespace Sensus.UI
             views.Add(viewProbesButton);
             #endregion
 
+            #region view states
+            Button viewUserStatesButton = new Button
+            {
+                Text = "User States",
+                FontSize = 20
+            };
+
+            viewUserStatesButton.Clicked += async (o, e) =>
+            {
+                await Navigation.PushAsync(new UserStatesPage(_protocol,"Edit User States"));
+            };
+
+            views.Add(viewUserStatesButton);
+            #endregion
+
+
             #region share -- we need this because we need to be able to hide the share button from the protocols while still allowing the protocol to be locked and shared
             Button shareButton = new Button
             {

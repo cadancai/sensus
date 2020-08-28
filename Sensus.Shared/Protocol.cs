@@ -51,6 +51,7 @@ using Plugin.Geolocator.Abstractions;
 using Newtonsoft.Json.Linq;
 using static Sensus.Adaptation.SensingAgent;
 using Sensus.Adaptation;
+using Sensus.UserStates;
 
 #if __IOS__
 using HealthKit;
@@ -92,6 +93,11 @@ namespace Sensus
             foreach (Probe probe in Probe.GetAll())
             {
                 protocol.AddProbe(probe);
+            }
+
+            foreach (UserState userState in UserState.GetAll())
+            {
+                protocol.AddUserState(userState);
             }
 
             SensusServiceHelper.Get().RegisterProtocol(protocol);
@@ -488,6 +494,7 @@ namespace Sensus
         private string _id;
         private string _name;
         private List<Probe> _probes;
+        private List<UserState> _userStates;
         private ProtocolState _state;
         private ScheduledCallback _scheduledStartCallback;
         private ScheduledCallback _scheduledStopCallback;
@@ -572,6 +579,12 @@ namespace Sensus
         {
             get { return _probes; }
             set { _probes = value; }
+        }
+
+        public List<UserState> UserStates
+        {
+            get { return _userStates;  }
+            set { _userStates = value; }
         }
 
         [JsonIgnore]
@@ -1692,6 +1705,15 @@ namespace Sensus
 
             _probes.Add(probe);
             _probes.Sort(new Comparison<Probe>((p1, p2) => p1.DisplayName.CompareTo(p2.DisplayName)));
+        }
+
+        private void AddUserState(UserState userState)
+        {
+            userState.Protocol = this;
+
+            _userStates.Add(userState);
+            _userStates.Sort(new Comparison<UserState>((p1, p2) => p1.DisplayName.CompareTo(p2.DisplayName)));
+
         }
 
         public bool TryGetProbe(Type type, out Probe probe)
