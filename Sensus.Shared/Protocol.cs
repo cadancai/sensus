@@ -1685,6 +1685,7 @@ namespace Sensus
             _variableValue = new Dictionary<string, string>();
             _startConfirmationMode = ProtocolStartConfirmationMode.None;
             _probes = new List<Probe>();
+            _userStates = new List<UserState>();
         }
 
         private Protocol(string name) : this()
