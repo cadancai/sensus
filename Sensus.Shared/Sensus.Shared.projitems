@@ -303,6 +303,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI\UserStatesPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserStates\UserState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\UserStatePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserStates\UserStateFeatures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserStates\IUserStateFeatures.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Probes\User\Scripts\ProbeTriggerProperties\" />

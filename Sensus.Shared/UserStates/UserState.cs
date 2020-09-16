@@ -54,6 +54,7 @@ namespace Sensus.UserStates
         private string _caption;
         private string _subcaption;
         private bool _enabled;
+        private UserStateFeatures _mostRecentUserStateFeatures;
         private bool _storeData;
         private DateTimeOffset? _mostRecentStoreTimestamp;
         private TimeSpan _updateInterval;
@@ -174,5 +175,10 @@ namespace Sensus.UserStates
         {
             return Task.CompletedTask;
         }
+
+
+
+
+
     }
 }
